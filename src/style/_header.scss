@@ -1,0 +1,25 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid $border-color;
+    padding: $container-padding-x $container-padding-y;
+
+    nav {
+        display: flex;
+        >button {
+            width: 100px;
+            &:first-of-type {
+                @include btn($primary-color, $body-bg, $primary-color);
+            }
+            &:last-of-type {
+                @include btn($white, $primary-color, $primary-color);
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+
