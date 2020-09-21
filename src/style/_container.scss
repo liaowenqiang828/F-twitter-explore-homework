@@ -6,7 +6,7 @@
 
   border: 1px solid $border-color;
   border-radius: 5px;
-
+  //TODO feedback: 应该多采用class选择器，而不是标签选择器（针对以下所有的标签选择器）
   form {
     display: flex;
     flex-direction: column;
@@ -14,22 +14,22 @@
     padding: 10%;
     width: 300px;
 
-    >h3 {
+    > h3 {
       color: $white;
     }
 
-    >label {
+    > label {
       display: block;
       width: 100%;
     }
 
-    >a {
+    > a {
       display: block;
       width: 100%;
       color: $primary-color;
     }
 
-    >button {
+    > button {
       width: 100%;
       margin: 10px 0;
       &:first-of-type {
@@ -37,9 +37,8 @@
       }
 
       &:last-of-type {
-        @include btn($white, $primary-color, $primary-color)
+        @include btn($white, $primary-color, $primary-color);
       }
     }
   }
-
 }

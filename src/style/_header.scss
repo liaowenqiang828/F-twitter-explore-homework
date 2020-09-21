@@ -1,25 +1,26 @@
 .header {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid $border-color;
+  padding: $container-padding-x $container-padding-y;
+
+  nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-bottom: 1px solid $border-color;
-    padding: $container-padding-x $container-padding-y;
-
-    nav {
-        display: flex;
-        >button {
-            width: 100px;
-            &:first-of-type {
-                @include btn($primary-color, $body-bg, $primary-color);
-            }
-            &:last-of-type {
-                @include btn($white, $primary-color, $primary-color);
-                margin-left: 10px;
-            }
-        }
+    > button {
+      width: 100px;
+      &:first-of-type {
+        @include btn($primary-color, $body-bg, $primary-color);
+      }
+      //TODO feedback: 虽然现在这个实现方式也没有问题，但是从代码的扩展性考虑，可以换一个思路：
+      // 我给每一个button都加一个margin-left: 10px; 但是第一个的margin-left: 0;
+      // 假如后面需求修改了，增加到了3个button, 我都不用来改css, 样式依然是OK的。
+      &:last-of-type {
+        @include btn($white, $primary-color, $primary-color);
+        margin-left: 10px;
+      }
     }
+  }
 }
-
-
